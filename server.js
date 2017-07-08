@@ -15,6 +15,12 @@ app.get('/login', function(req, res){
 	res.render('login')
 });
 
+app.get('/new-card', function(req, res){
+	res.render('new-card')
+});
+
+//Next add sign-up
+
 app.listen(8080, function(){
 	console.log('Server started on port 8080...')
 });

@@ -1,1 +1,17 @@
-new-card.pug
+extends layout
+
+block content
+	div(class="new-card-header")
+		h1 Create a New Card
+	div(class="new-card-container")
+		form(id="new-card-form")
+			div(class="row")
+				label(class="form-label" for="question") Question
+				input(class="form-input" type="text" placeholder="js method" id="question" required)
+			div(class="row")
+				label(class="form-label" for="answer") Answer
+				input(class="form-input" type="text" placeholder="short answer" id="answer" required)
+			div(class="row")
+				label(class="form-label" for="answer") Reference
+				input(class="form-input" type="text" placeholder="link to reference" id="reference" required)
+			button(type="submit" value="submit" id="new-card-submit") Submit	
