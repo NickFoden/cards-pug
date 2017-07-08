@@ -2,13 +2,16 @@ const express = require('express');
 const path = require('path');
 
 const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 
 const app = express();
 const {PORT, DATABASE_URL} = require('./config.js');
 
 const {router: routerCards} = require('./routerCards');
+const {router: routerUsers} = require('./routerUsers');
 
 app.use('/cards/', routerCards);
+app.use('/users/', routerUsers);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');

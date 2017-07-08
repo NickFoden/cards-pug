@@ -109,8 +109,8 @@ router.get('/login',
 
 router.post('/login', function(req, res, next) {
   passport.authenticate('local', { 
-    successRedirect: '/summary.html', 
-    failureRedirect: '/sign-up.html'
+    successRedirect: '/summary', 
+    failureRedirect: '/sign-up'
   })(req, res, next);
 });
 
