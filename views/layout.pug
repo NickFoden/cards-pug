@@ -13,8 +13,11 @@ html
 				li: a(href="/start") Start
 				li: a(href="/new-card") Add A new Card
 				li: a(href="/summary") Summary
-				li: a(href="/login") Log In
-				li: a(href="/sign-up" id='sign-up') Sign up
+				if user
+					li: a(href="/logout") Log out
+				else
+					li: a(href="/login") Log In
+					li: a(href="/sign-up" id='sign-up') Sign up
 
 		block content
 		footer(class="footer")

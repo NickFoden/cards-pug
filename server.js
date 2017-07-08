@@ -10,6 +10,11 @@ const {PORT, DATABASE_URL} = require('./config.js');
 const {router: routerCards} = require('./routerCards');
 const {router: routerUsers} = require('./routerUsers');
 
+app.get('*', function(req, res, next){
+  res.locals.user = req.user || null;
+  next();
+});
+
 app.use('/cards/', routerCards);
 app.use('/users/', routerUsers);
 
@@ -24,6 +29,12 @@ app.get('/', function(req, res){
 
 app.get('/login', function(req, res){
 	res.render('login')
+});
+
+app.get('/logout', function(req, res){
+	req.logout();
+	console.log("You Are Logged Out")
+	res.redirect('/index')
 });
 
 app.get('/new-card', function(req, res){

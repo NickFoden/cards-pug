@@ -1,16 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const app = express();
 const mongoose = require('mongoose');
-const Strategy = require('passport-local').Strategy;
+const app = express();
 const bodyParser = require('body-parser');
-const bcrypt = require('bcryptjs');
+const session = require('express-session');
+const Strategy = require('passport-local').Strategy;
 const passport = require('passport');
+const bcrypt = require('bcryptjs');
+
 mongoose.Promise = global.Promise;
 const {User} = require('./models.js');
 const {PORT, DATABASE_URL} = require('./config.js');
 const cookieParser = require('cookie-parser');
-var session = require('express-session');
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -20,8 +21,15 @@ router.use(require('express-session')({
     resave: false,
     saveUninitialized: false
 }));
+
 router.use(passport.initialize());
 router.use(passport.session());
+
+router.get('*', function(req, res, next){
+  console.log("Checking", req.user);
+  res.locals.user = req.user || null;
+  next();
+});
 
 router.post('/', (req, res) => {
   if (!req.body) {
@@ -102,17 +110,24 @@ passport.deserializeUser(function(id, cb) {
   });
 });
 
-router.get('/login', 
+/*router.get('/login', 
   function(req, res){
     res.sendFile(path.join(__dirname + '/public/login.html'));
-  });
+  });*/
 
-router.post('/login', function(req, res, next) {
+router.post('/login', function(req, res) {
   passport.authenticate('local', { 
     successRedirect: '/summary', 
     failureRedirect: '/sign-up'
-  })(req, res, next);
+  })(req, res);
 });
+
+/*router.post('/login', 
+  passport.authenticate('local'),
+    function(req, res) {
+      res.redirect('/');
+});*/
+
 
 router.get('/logout',
   function(req, res){
