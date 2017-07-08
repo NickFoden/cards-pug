@@ -1,0 +1,299 @@
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	background: #24D69E;
+	font-family: "Helvetica", sans-serif;
+	text-decoration: none;
+}
+
+body {
+	background: #24D69E;
+	opacity: 0.8;
+	margin: 0;
+}
+
+a, a:hover {
+	text-decoration: none;
+}
+
+
+.h2 {
+	color:transparent;
+	text-decoration: none;
+}
+
+.index-header {
+	margin-left: 70px;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.body-index {
+	margin-left: 200px;
+	margin-top: 100px;
+}
+
+.container {
+	width: 300px;
+	height: 200px;
+	padding: 50px;
+	background-color: #8fe8be;
+	margin: auto;
+}	
+
+.new-card-container {
+	margin-left: 75px;
+	width: 250px;
+}
+
+.login-container {
+	margin-left: 75px;
+	width: 350px;
+}
+
+.form-input {
+	float: right;
+}
+
+.row {
+	display: block;
+	overflow: hidden;
+}
+
+.new-card-header {
+	margin-top: 5%;
+	margin-left: 100px;
+}
+
+.nav-bar {
+    display: block;
+    list-style-type: none;
+    background-color: #EDF1F2;
+    padding: 8px;
+    text-decoration: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    height: 30px;
+    width: 100%;
+}
+
+.nav-bar li {
+    display: inline;
+    padding: 20px;
+}
+
+.nav-bar ul {
+    display: inline;
+}
+
+.nav-bar a {
+    padding: 5px;
+    color: #34495E;
+}
+
+#sign-up {
+	float: right; 
+	margin-left: 5px;
+	margin-top: -5px;
+}
+
+.nav-bar a:hover {
+    background-color: #555;
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.display-card-question {
+	width: 70%;
+	height: 100px;
+	padding:25px;
+	border: 1px solid #4B5C66;
+	background-color: #ebf4ed;
+	color: #4B5C66;
+}
+
+.display-card-answer {
+	width: 70%;
+	min-height: 100px;
+	padding:25px;
+	border: 1px solid #4B5C66;
+	background-color: #ebf4ed;
+	color: #4B5C66;
+	text-decoration: none;
+	margin-top: 15px;
+}
+
+.start-body {
+	margin-left: 15%;
+	margin-top: 10%;
+}
+
+#sign-up-body {
+	margin-left: 20%;
+	margin-top: 10%;
+	font-color: black;
+}
+
+.end-card {
+	width: 50%;
+	height: 100px;
+	padding:25px;
+	border: 1px solid #4B5C66;
+	background-color: #ebf4ed;
+	color: black;
+}
+.new-card-header {
+	padding-top: 3%;
+}
+
+#new-card-submit {
+	margin-top: 20px;
+	padding: 5px;
+	margin-left: 50px;
+}
+
+#start-button {
+	background-color: white;
+	border-radius: 4px;
+	padding: 10px;
+	margin: auto;
+	font-size: 1em;
+	border: 1px solid #4B5C66;
+}
+
+#answer-button {
+	position: relative;
+	top: 20px;
+	left: 20px;
+	height:75px;
+	width: 75px;
+	font-size: 1.5em;
+	background-color: #53A8E0;
+	border: 1px solid #4B5C66;
+}
+
+#next-card {
+	position: relative;
+	top: 20px;
+	left: 20px;
+	height: 75px;
+	width: 75px;
+	font-size: 1.5em;
+	background-color: #53A8E0;
+	border: 1px solid #4B5C66;
+}
+
+#start-over {
+	position: relative;
+	top: 20px;
+	left: 20px;
+	background-color: #53A8E0;
+	height: 50px;
+	width: auto;
+	font-size: 1em;
+	border: 1px solid #4B5C66;
+}
+
+#index {
+	position: relative;
+	top: 20px;
+	left: 20px;
+	background-color: #53A8E0;
+	height: 50px;
+	width: auto;
+	font-size: 1em;
+	margin-left: 10px;
+	border: 1px solid #4B5C66;
+}
+
+.summary-container {
+	margin-left: 100px;
+	margin-top: 100px;
+}
+
+#summary-button {
+	font-size: 1em;
+	background-color: #53A8E0;
+	border: 1px solid #4B5C66;
+	width: auto;
+	cursor: pointer;
+	border-radius: 2px;
+}
+
+.cards-summary {
+	height: auto;
+	min-width: 300px;
+	width: 60%; 
+	margin-right: 35%;
+	padding: 5px;
+	background-color: #EDF1F2;
+	font-size: 1em;
+	border: 1px solid #4B5C66;
+	list-style-type: none;
+}
+
+.delete {
+	padding: 0.75px;
+	font-size: .3em;
+	background-color: #d1d5d6;
+	border: 1px solid #4B5C66;
+	cursor: pointer;
+	border-radius: 2px;
+	float: right;
+}
+
+.hidden {
+	display: none;
+}
+
+@media only screen and (max-device-width: 500px) {
+ 
+	.nav-bar {
+	    display: block;
+	    list-style-type: none;
+	    background-color: #EDF1F2;
+	    padding: 8px;
+	    text-decoration: none;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    overflow: hidden;
+	    height: 100%;
+	    width: 25px;
+	    writing-mode: vertical-rl;
+	}
+	
+	.nav-bar li {
+    	display: inline;
+    	padding: 20px;
+	}
+
+	.nav-bar ul {
+	    display: inline;
+	}
+	.body-index {
+		position: fixed;
+		top: 0;
+	}
+	#sign-up {
+		float: none; 
+		margin-left: 0px;
+		margin-top: 0px;
+	}
+	#sign-up-body {
+		margin-left: 0;
+		margin-top: 0;
+		font-color: black;
+	}
+}
+
+
+//END
