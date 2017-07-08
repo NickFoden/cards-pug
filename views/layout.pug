@@ -7,12 +7,12 @@ html
 	body
 		nav(class="nav-bar")
 			ul
-				li Welcome
-				li Start
-				li Add A new Card
-				li Summary
-				li Log In
-				li(id='sign-up') Sign up
+				li: a(href="/") Welcome
+				li: a(href="/start") Start
+				li: a(href="/new-card") Add A new Card
+				li: a(href="/summary") Summary
+				li: a(href="/login") Log In
+				li: a(href="/sign-up" id='sign-up') Sign up
 
 		block content
 		footer
