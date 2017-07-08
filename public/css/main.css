@@ -19,6 +19,12 @@ a, a:hover {
 	text-decoration: none;
 }
 
+footer{
+	position: absolute;
+	bottom:0;
+	width: 100%;
+	margin-left: 10px;
+}
 
 .h2 {
 	color:transparent;
@@ -38,7 +44,7 @@ a, a:hover {
 	margin-top: 100px;
 }
 
-.container {
+.start-container {
 	width: 300px;
 	height: 200px;
 	padding: 50px;
