@@ -1,1 +1,14 @@
-sign-up.pug
+extends layout
+
+block content
+	div(id="sign-up-body")
+		h2 Sign Up and Create Your Own Cards
+		div(class="new-card-container")
+			form(id="new-user-form")
+				div(class="row")
+					label(class="form-label" for="user") Email
+					input(class="form-input" type="email" placeholder="user email" name="username" id="username" required)
+				div(class="row")
+					label(class="form-label" for="password") Password
+					input(class="form-input" type="password" placeholder="password" name="password" id="password" required)
+				button(type="submit" value="Submit" id="sign-up-submit") Sign Up		

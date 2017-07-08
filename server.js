@@ -19,7 +19,9 @@ app.get('/new-card', function(req, res){
 	res.render('new-card')
 });
 
-//Next add sign-up
+app.get('/sign-up', function(req, res){
+	res.render('sign-up')
+});
 
 app.listen(8080, function(){
 	console.log('Server started on port 8080...')
