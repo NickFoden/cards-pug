@@ -23,6 +23,14 @@ app.get('/sign-up', function(req, res){
 	res.render('sign-up')
 });
 
+app.get('/start', function(req, res){
+	res.render('start')
+});
+
+app.get('/summary', function(req, res){
+	res.render('summary')
+});
+
 app.listen(8080, function(){
 	console.log('Server started on port 8080...')
 });
