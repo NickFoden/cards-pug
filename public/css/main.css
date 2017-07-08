@@ -100,8 +100,8 @@ a, a:hover {
 
 #sign-up {
 	float: right; 
-	margin-left: 5px;
-	margin-top: -5px;
+	margin-left: 0px;
+	padding: 0px;
 }
 
 .nav-bar a:hover {
@@ -285,8 +285,8 @@ a, a:hover {
 	}
 	#sign-up {
 		float: none; 
-		margin-left: 0px;
-		margin-top: 0px;
+		margin: 0px;
+		padding: 0px;
 	}
 	#sign-up-body {
 		margin-left: 0;
