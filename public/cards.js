@@ -1,4 +1,4 @@
-let cards_js = [
+/*let cards_js = [
         {
           "id":"1",
           "question":"const",
@@ -20,13 +20,13 @@ let cards_js = [
           "example": "var array = [2, 9, 9] array.indexOf(2) / 0  array.indexOf(7)  / -1",
           "reference":"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Basics"
         }
- ];
+ ];*/
 
 let used = [];
-//var cards_js = [];
+let cards_js = [];
 
 
-/*function loadDb() {
+function loadDb() {
   $.getJSON(
     "/cards",
     function (result){
@@ -36,7 +36,7 @@ let used = [];
   )
 }  
 
-loadDb();*/
+loadDb();
 
 let getCard = () => {
   let notUsed = true;
@@ -54,7 +54,6 @@ let getCard = () => {
   }
 };
 
-let currentCard = getCard(cards_js);
  
 function displayCardQuestion(data){
   let resultElement = 

@@ -6,6 +6,10 @@ const mongoose = require('mongoose');
 const app = express();
 const {PORT, DATABASE_URL} = require('./config.js');
 
+const {router: routerCards} = require('./routerCards');
+
+app.use('/cards/', routerCards);
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
