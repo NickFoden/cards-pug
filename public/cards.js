@@ -83,7 +83,7 @@ function displayEnd(data){
 
 function displaySummary(data){
  for (i = 0; i < data.length; i++){
-  let summary = `<li><h5>${data[i].question}<button id="${data[i]._id}" class="delete">Delete</button></h5></li>`;
+  let summary = `<li><h5><a href="http://${data[i].reference}" target="_blank">${data[i].question}</a><button id="${data[i]._id}" class="delete">Delete</button></h5></li>`;
   $('.cards-summary').append(summary);
  }
 }

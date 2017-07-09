@@ -1,15 +1,8 @@
 const express = require('express');
-const app = express();
 const router = express.Router();
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const jsonParser = require('body-parser').json();
-const bcrypt = require('bcryptjs');
-const passport = require('passport');
-const Strategy = require('passport-local').Strategy;
-mongoose.Promise = global.Promise;
 const {Card} = require('./models.js');
-const {PORT, DATABASE_URL} = require('./config.js');
 
 const routerCards = router;
 

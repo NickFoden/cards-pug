@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const app = express();
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const Strategy = require('passport-local').Strategy;
@@ -10,7 +9,6 @@ const bcrypt = require('bcryptjs');
 
 mongoose.Promise = global.Promise;
 const {User} = require('./models.js');
-const {PORT, DATABASE_URL} = require('./config.js');
 const cookieParser = require('cookie-parser');
 
 router.use(bodyParser.json());
@@ -18,8 +16,8 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.use(cookieParser());
 router.use(require('express-session')({
     secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: false
+    resave: true,
+    saveUninitialized: true
 }));
 
 router.use(passport.initialize());
@@ -115,11 +113,11 @@ passport.deserializeUser(function(id, cb) {
     res.sendFile(path.join(__dirname + '/public/login.html'));
   });*/
 
-router.post('/login', function(req, res) {
+router.post('/login', function(req, res, next) {
   passport.authenticate('local', { 
     successRedirect: '/summary', 
     failureRedirect: '/sign-up'
-  })(req, res);
+  })(req, res, next);
 });
 
 /*router.post('/login', 
