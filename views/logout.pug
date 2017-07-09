@@ -1,8 +1,7 @@
 extends layout
 
 block content
-	div(id="logout-body")
-		div(class="logout-container")
-			h2 Log out
-			form(id="logout-form" method="post" action="/users/logout")
-				button(type="submit" value="Submit" id="logout-submit") Log Out
+	div(class="logout-container")
+		h2 Log out
+		form(id="logout-form" method="post" action="/users/logout")
+			button(type="submit" value="Submit" id="logout-submit") Log Out

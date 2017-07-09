@@ -24,56 +24,52 @@ footer{
 	bottom:0;
 	width: 100%;
 	margin-left: 10px;
+	font-size: .75em;
 }
 
-.h2 {
-	color:transparent;
+h2 {
 	text-decoration: none;
 }
 
-.index-header {
-	margin-left: 70px;
+h5 {
+	margin: 0px;
+	padding: 0px;
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
 }
 
 .hidden {
 	visibility: hidden;
 }
 
-.body-index {
-	margin-left: 200px;
-	margin-top: 100px;
-}
-
-.start-container {
-	width: 300px;
-	height: 200px;
-	padding: 50px;
-	background-color: #8fe8be;
-	margin: auto;
-}	
-
-.new-card-container {
-	margin-left: 75px;
-	width: 250px;
-}
-
-.login-container {
-	margin-left: 75px;
-	width: 350px;
-}
-
-.form-input {
-	float: right;
+.container{
+	margin-left: 180px;
+	margin-top: 75px;
+	min-height: 600px;
 }
 
 .row {
 	display: block;
 	overflow: hidden;
+	width: 250px;
 }
 
-.new-card-header {
-	margin-top: 5%;
-	margin-left: 100px;
+.new-card-row {
+	display: block;
+	overflow: hidden;
+	width: 350px;	
+}
+
+.form-input{
+	float: right;	
+}
+
+.login{
+	width: 150px;
+}
+
+.new-card{
+	width:250px;
 }
 
 .nav-bar {
