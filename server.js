@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
@@ -10,8 +11,13 @@ const {PORT, DATABASE_URL} = require('./config.js');
 const {router: routerCards} = require('./routerCards');
 const {router: routerUsers} = require('./routerUsers');
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
+
 app.get('*', function(req, res, next){
+  console.log("just the req", req.user);
   res.locals.user = req.user || null;
+  console.log("user locals", res.locals.user);
   next();
 });
 

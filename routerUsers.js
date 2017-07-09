@@ -16,19 +16,12 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.use(cookieParser());
 router.use(require('express-session')({
     secret: 'keyboard cat',
-    resave: true,
-    saveUninitialized: true
+    resave: false,
+    saveUninitialized: false
 }));
 
 router.use(passport.initialize());
 router.use(passport.session());
-
-router.get('*', function(req, res, next){
-  console.log("Checking", req.user);
-  res.locals.user = req.user || null;
-  next();
-});
-
 router.post('/', (req, res) => {
   if (!req.body) {
     return res.status(400).json({message: 'No request body'});
