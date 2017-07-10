@@ -6,7 +6,8 @@ const cardSchema = mongoose.Schema({
          "question": {type: String, required: true},
          "answer": {type: String, required: true},
          "reference": {type: String, required: true},
-         "difficulty": {}
+         "difficulty": {},
+         "author": {type: String, required: true}
      }, {
           "versionKey": false 
      }

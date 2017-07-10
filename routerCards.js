@@ -36,9 +36,10 @@ router.post('/', (req, res) => {
   }
 	Card
     .create({
-      question: req.body.question,
-      answer: req.body.answer,
-      reference: req.body.reference})
+      	question: req.body.question,
+      	answer: req.body.answer,
+      	reference: req.body.reference,
+  		author: req.user.username})
     .then(
       card => res.status(201).json(card))    
     .catch(err => {

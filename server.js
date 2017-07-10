@@ -40,7 +40,6 @@ app.set('view engine', 'pug');
 app.use('/static', express.static('public'));
 
 app.get('*', function(req, res, next){
-  console.log("just the req", req.user);
   res.locals.user = req.user || null;
   next();
 });
@@ -59,6 +58,10 @@ app.get('/', function(req, res){
 	res.render('index')
 });
 
+app.get('/index', function(req, res){
+	res.render('index')
+});
+
 app.get('/login', function(req, res){
 	res.render('login')
 });
@@ -66,7 +69,7 @@ app.get('/login', function(req, res){
 app.get('/logout', function(req, res){
 	req.logout();
 	console.log("You Are Logged Out")
-	res.redirect('/index')
+	res.redirect('index')
 });
 
 app.get('/new-card', ensureAuthenticated, function(req, res){
