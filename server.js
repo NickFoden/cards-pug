@@ -52,8 +52,8 @@ function ensureAuthenticated(req, res, next){
 		res.redirect('login');
 	}
 }
-//Routes
 
+//Routes
 app.get('/', function(req, res){
 	res.render('index')
 });
