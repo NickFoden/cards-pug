@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     .find()
     .exec()
     .then(cards => {
-      res.status(200).json(cards), {user: req.user};
+      res.status(200).json(cards)/*, {user: req.user}*/;
     })
     .catch(
       err => {

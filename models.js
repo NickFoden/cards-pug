@@ -25,7 +25,6 @@ userSchema.statics.hashPassword = function(password) {
 }
 
 userSchema.methods.validatePassword = function(password) {
-  console.log(password);
   return bcrypt
     .compare(password, this.password)
     .then(isValid => isValid);

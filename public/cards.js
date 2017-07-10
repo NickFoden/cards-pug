@@ -1,30 +1,5 @@
-/*let cards_js = [
-        {
-          "id":"1",
-          "question":"const",
-          "answer": "Declares a read-only named constant",
-          "example": "const id = 15",
-          "reference":"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Basics"
-        },
-        {
-          "id":"2",
-          "question":"var",
-          "answer":"Declares a variable, optionally initializing it to a value.",
-          "example":"var x = 5",
-          "reference":"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Basics"
-        },
-         {
-          "id":"3",
-          "question":"indexOf() method",
-          "answer":"Returns the first index at which a given element can be found in the array, or -1 if it is not present.",
-          "example": "var array = [2, 9, 9] array.indexOf(2) / 0  array.indexOf(7)  / -1",
-          "reference":"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Basics"
-        }
- ];*/
-
 let used = [];
 let cards_js = [];
-
 
 function loadDb() {
   $.getJSON(
@@ -53,7 +28,6 @@ let getCard = () => {
     return cards_js[index];
   }
 };
-
  
 function displayCardQuestion(data){
   let resultElement = 
@@ -76,7 +50,7 @@ function displayCardAnswer(data){
 function displayEnd(data){
   let resultElement = `<div class="end-card">You have reached the end</div>
                         <button id="start-over" onclick="location.href='start.html'">Start over</button>
-                        <button id="index" onclick="location.href='summary.html'">Index of Cards</button>`;
+                        <button id="index" onclick="location.href='summary'">Index of Cards</button>`;
 
    $('#display').html(resultElement);  
 };

@@ -8,7 +8,6 @@ const url = require('url');
 
 chai.use(chaiHttp);
 
-
 describe('Cards Test Index Page', function(){
 	it('index should be alive', function(){
 		chai.request(app)
@@ -59,7 +58,6 @@ describe('Cards Test Index Page', function(){
 			done();
 		});
 	});
-
 
 	it('summary page exists', function(){
 		chai.request(app)
