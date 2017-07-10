@@ -45,6 +45,14 @@ app.get('*', function(req, res, next){
   next();
 });
 
+function ensureAuthenticated(req, res, next){
+	if(req.isAuthenticated()){
+		return next();
+	} else {
+		console.log("Please Log in")
+		res.redirect('login');
+	}
+}
 //Routes
 
 app.get('/', function(req, res){
@@ -61,7 +69,7 @@ app.get('/logout', function(req, res){
 	res.redirect('/index')
 });
 
-app.get('/new-card', function(req, res){
+app.get('/new-card', ensureAuthenticated, function(req, res){
 	console.log(req.user)
 	res.render('new-card')
 });
