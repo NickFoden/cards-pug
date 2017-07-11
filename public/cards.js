@@ -56,10 +56,17 @@ function displayEnd(data){
 };
 
 function displaySummary(data){
- for (i = 0; i < data.length; i++){
-  let summary = `<li><h5><a href="http://${data[i].reference}" target="_blank">${data[i].question}</a><button id="${data[i]._id}" class="delete">Delete</button></h5></li>`;
-  $('.cards-summary').append(summary);
- }
+  let check = sessionStorage.getItem('user');
+  console.log('check ' + check)
+  let erase = "hidden"
+  if (check){
+    erase = ""
+  } 
+  console.log("erase " + erase);
+  for (i = 0; i < data.length; i++){
+    let summary = `<li><h5><a href="http://${data[i].reference}" target="_blank">${data[i].question}</a><button id="${data[i]._id}" class="delete ${erase}">Delete</button></h5></li>`;
+    $('.cards-summary').append(summary);
+  }
 }
 
 function deleteCard(id){

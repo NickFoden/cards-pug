@@ -7,3 +7,5 @@ block content
 		h3(class="summary-list hidden") All of the Cards
 		br
 		div(class="cards-summary hidden")
+			if user
+				script - sessionStorage.setItem('user', 'true')
