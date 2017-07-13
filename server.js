@@ -141,7 +141,7 @@ app.post('/users', (req, res) => {
         })
     })
     .then(user => {
-      return res.status(201).json(user.apiRepr());
+      return res.status(201).json({user:user.username});
     })
     .catch(err => {
       console.log(err);

@@ -8,7 +8,7 @@ $(document).on('submit', "#new-user-form", function(e){
       type: "POST",
       url: "/users",
       data: JSON.stringify(newUser),
-      success: () => console.log("Post Success"),
+      success: () => window.location.href='/login',
       dataType: "json",
       contentType: "application/json"
     });
