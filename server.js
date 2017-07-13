@@ -95,7 +95,7 @@ app.post('*', function(req, res, next){
   next();
 });
 
-app.post('/', (req, res) => {
+app.post('/users', (req, res) => {
   if (!req.body) {
     return res.status(400).json({message: 'No request body'});
   }
