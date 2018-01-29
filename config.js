@@ -1,6 +1,5 @@
 exports.DATABASE_URL =
-  // process.env.DATABASE_URL
-  "mongodb://cards-user:BlueCity25!@ds129031.mlab.com:29031/cards_js" ||
+  process.env.DATABASE_URL ||
   global.DATABASE_URL ||
   "mongodb://localhost/cards-db";
 
