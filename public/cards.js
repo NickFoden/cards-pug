@@ -36,9 +36,7 @@ function displayCardQuestion(data) {
 
 function displayCardAnswer(data) {
   let resultElement = `<div class="display-card-answer">
-    <h2><a href="http://${data.reference}" target="_blank">${
-    data.answer
-  }</a></h2>
+    <h2><a href="${data.reference}" target="_blank">${data.answer}</a></h2>
     </div><button id="next-card">Next</button>`;
   $("#answer-button").hide();
   $("#display").append(resultElement);
@@ -61,9 +59,9 @@ function displaySummary(data) {
   }
   console.log("erase " + erase);
   for (i = 0; i < data.length; i++) {
-    let summary = `<li><h5><a href="http://${
-      data[i].reference
-    }" target="_blank">${data[i].question}</a><button id="${
+    let summary = `<li><h5><a href="${data[i].reference}" target="_blank">${
+      data[i].question
+    }</a><button id="${
       data[i]._id
     }" class="delete ${erase}">Delete</button></h5></li>`;
     $(".cards-summary").append(summary);
