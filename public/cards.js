@@ -1,10 +1,22 @@
 let used = [];
 let cards_js = [];
 
+function showMessage(message) {
+  let result = `<h3>${message}</h3>`;
+  $("#message").html(result);
+}
+
 function loadDb() {
-  $.getJSON("/cards", function(result) {
-    cards_js = result;
-    currentCard = getCard(cards_js);
+  $.ajax({
+    type: "GET",
+    url: "/cards",
+    success: function(result) {
+      cards_js = result;
+      currentCard = getCard(cards_js);
+    },
+    failure: function(message) {
+      showMessage(message);
+    }
   });
 }
 
@@ -52,12 +64,10 @@ function displayEnd(data) {
 
 function displaySummary(data) {
   let check = sessionStorage.getItem("user");
-  console.log("check " + check);
   let erase = "hidden";
   if (check) {
     erase = "";
   }
-  console.log("erase " + erase);
   for (i = 0; i < data.length; i++) {
     let summary = `<li><h5><a href="${data[i].reference}" target="_blank">${
       data[i].question
@@ -75,6 +85,9 @@ function deleteCard(id) {
     dataType: "json",
     success: () => {
       console.log("Deleted Successfully");
+    },
+    failure: data => {
+      console.log(data.message);
     }
   });
 }
@@ -116,6 +129,7 @@ $(document).on("submit", "#new-card-form", function(e) {
     url: "/cards",
     data: JSON.stringify(newCard),
     success: () => console.log("Post Success"),
+    error: data => showMessage(data),
     dataType: "json",
     contentType: "application/json"
   });

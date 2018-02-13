@@ -76,7 +76,9 @@ h5 {
 .login {
   width: 150px;
 }
-
+#message {
+  margin-left: 50px;
+}
 .new-card {
   width: 250px;
 }

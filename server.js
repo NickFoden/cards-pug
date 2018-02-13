@@ -15,7 +15,6 @@ const bcrypt = require("bcryptjs");
 mongoose.Promise = global.Promise;
 const { User } = require("./models.js");
 const cookieParser = require("cookie-parser");
-// const popupS = require("popups");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -52,7 +51,6 @@ function ensureAuthenticated(req, res, next) {
     return next();
   } else {
     res.redirect("login");
-    // popupS.alert({ content: "Please Log in" });
   }
 }
 
@@ -99,40 +97,31 @@ app.post("*", function(req, res, next) {
 app.post("/users", (req, res) => {
   if (!req.body) {
     return res.status(400).json({ message: "No request body" });
-    // popupS.alert({ content: "Forget to fill out the form?" });
   }
   if (!("username" in req.body)) {
     return res.status(422).json({ message: "Missing field: username" });
-    // popupS.alert({ content: "Missing field: username" });
   }
   let { username, password } = req.body;
   if (typeof username !== "string") {
     return res.status(422).json({ message: "Incorrect field type: username" });
-    // popupS.alert({ content: "Incorrect type of username, try a string" });
   }
   username = username.trim();
   if (username === "") {
     return res
       .status(422)
       .json({ message: "Incorrect field length: username" });
-    // popupS.alert({ content: "Try a longer username" });
   }
   if (!password) {
     return res.status(422).json({ message: "Missing field: password" });
-    // popupS.alert({ content: "Sorry bud gonna need that password" });
   }
   if (typeof password !== "string") {
     return res.status(422).json({ message: "Incorrect field type: password" });
-    // popupS.alert({
-    //   content: "Sorry we are gonna need that password to be a string"
-    // });
   }
   password = password.trim();
-  if (password === "") {
+  if (password.length < 6) {
     return res
       .status(422)
       .json({ message: "Incorrect field length: password" });
-    // popupS.alert({ content: "Please try a longer password." });
   }
   return User.find({ username })
     .count()
