@@ -53,6 +53,10 @@ h5 {
   min-height: 600px;
 }
 
+.welcome-image {
+  margin-top: 25px;
+}
+
 .row {
   display: block;
   overflow: hidden;
@@ -310,6 +314,7 @@ h5 {
 .hidden {
   display: none;
 }
+
 /* @media only screen and (max-width: 1950px) {
 } */
 @media only screen and (max-width: 566px) {
@@ -364,5 +369,8 @@ h5 {
   }
   .welcome-text {
     text-align: center;
+  }
+  .welcome-image {
+    margin-top: 5px;
   }
 }
