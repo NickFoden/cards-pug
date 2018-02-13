@@ -110,6 +110,7 @@ h5 {
   float: right;
   padding: 2px;
   margin-left: 0px;
+  margin-right: 25px;
 }
 
 .nav-bar a:hover {
@@ -292,11 +293,12 @@ h5 {
 .delete {
   padding: 0.5px;
   font-size: 0.5em;
+  float: right;
   background-color: #d1d5d6;
   border: 1px solid var(--black);
   cursor: pointer;
   border-radius: 2px;
-  margin-left: 10%;
+  margin-right: 25px;
 }
 .delete:hover {
   color: var(--black);
@@ -343,6 +345,15 @@ h5 {
   .container {
     padding: 5px;
     margin: 5px;
+  }
+  .cards-summary {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+  }
+  .delete {
+    margin-right: 5px;
   }
   .summary-title {
     margin: 5px;
