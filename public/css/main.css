@@ -77,9 +77,10 @@ h5 {
 }
 
 .new-card-row {
-  display: block;
-  overflow: hidden;
-  width: 350px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  width: 30%;
 }
 
 .form-input {
