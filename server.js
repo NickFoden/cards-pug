@@ -119,12 +119,10 @@ app.post("/users", (req, res) => {
   }
   password = password.trim();
   if (password.length < 6) {
-    return res
-      .status(422)
-      .json({
-        message:
-          "Incorrect field length: password needs to be at least 6 characters"
-      });
+    return res.status(422).json({
+      message:
+        "Incorrect field length: password needs to be at least 6 characters"
+    });
   }
   return User.find({ username })
     .count()
@@ -152,7 +150,11 @@ app.post("/users", (req, res) => {
       if (err.name === "AuthenticationError") {
         return res.status(422).json({ message: err.message });
       }
-      res.status(500).json({ message: "Username or Password is incorrect" });
+      res
+        .status(500)
+        .json({
+          message: "Username or Password didn't work, please try again"
+        });
     });
 });
 
