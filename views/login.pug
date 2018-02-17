@@ -3,11 +3,12 @@ extends layout
 block content
 	h2 Log In
 	form(id="login-form" method="post" action="/users/login")
-		div(class="row")
-			label(class="form-label" for="user") Email 
-			input(class="form-input login" type="email" placeholder="user email" id="username" name="username" required)
-		div(class="row")
-			label(class="form-label" for="password") Password
-			input(class="form-input login" type="password" placeholder="password" id="password" name="password" required)
+		div(class="row-log-in")
+			label: h3(class="form-label" for="user") Email:
+			div(class="")
+				input(class="form-input" type="email" placeholder="user email" id="username" name="username" required)
+			label: h3(class="form-label" for="password") Password:
+			div(class="")
+				input(class="form-input" type="password" placeholder="password" id="password" name="password" required)
 		br
 		button(type="submit" value="Submit" id="login-submit") Log In
