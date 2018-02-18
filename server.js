@@ -34,8 +34,9 @@ app.use(passport.session());
 const { router: routerCards } = require("./routerCards");
 const { router: routerUsers } = require("./routerUsers");
 
-app.use("/cards/", routerCards);
-app.use("/users/", routerUsers);
+app.use("/cards", routerCards);
+app.use("/users", routerUsers);
+//removed trailing slash to try
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
