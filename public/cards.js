@@ -79,12 +79,13 @@ function displaySummary(data) {
   for (i = 0; i < data.length; i++) {
     let summary = `<li><h5><a href="${data[i].reference}" target="_blank">${
       data[i].question
-    }</a><button id="${
-      data[i]._id
-    }" class="delete ${erase}">Delete</button></h5></li>`;
+    }</a>
+    </h5></li>`;
     $(".cards-summary").append(summary);
   }
 }
+
+//  <button id="${data[i]._id}" class="delete ${erase}">Delete</button>
 
 function deleteCard(id) {
   $.ajax({
