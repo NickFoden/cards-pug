@@ -8,4 +8,4 @@ exports.TESTDATABASE_URL =
 
 exports.PORT = process.env.PORT || 8080;
 
-exports.SECRET_KEY = process.env.SECRET_KEY;
+exports.SECRET_KEY = process.env.SECRET_KEY || "pizza";
