@@ -119,7 +119,7 @@ app.post("/users", (req, res) => {
     return res.status(422).json({ message: "Incorrect field type: password" });
   }
   password = password.trim();
-  if (password.length < 6) {
+  if (password.length < 5) {
     return res.status(422).json({
       message:
         "Incorrect field length: password needs to be at least 6 characters"
