@@ -155,19 +155,12 @@ app.post("/users", (req, res) => {
       return res.status(201).json({ user: user.username });
     })
     .catch(err => {
-      console.log(err);
-      // if (err.name === "AuthenticationError") {
-      //   return res.status(422).json({ message: err.message });
-      // }
-      // res.status(500).json({
-      //   message: "Username or Password didn't work, please try again"
-      // });
-      // if (err.name === "AuthenticationError") {
-      //   return res.status(422).json({ message: err.message });
-      // }
-      // res.status(500).json({
-      //   message: "Username or Password didn't work, please try again"
-      // });
+      if (err.name === "AuthenticationError") {
+        return res.status(422).json({ message: err.message });
+      }
+      res.status(500).json({
+        message: "Username or Password didn't work, please try again"
+      });
     });
 });
 
