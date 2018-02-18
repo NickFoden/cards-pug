@@ -1,6 +1,14 @@
 let used = [];
 let cards_js = [];
 
+let currentCard = {
+  question: "Math.random()",
+  answer:
+    "returns a floating-point, pseudo-random number in the range [0, 1) that is, from 0 (inclusive) up to but not including 1 (exclusive)",
+  reference:
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random"
+};
+
 function showMessage(message) {
   let result = `<h3>${message}</h3>`;
   $("#message").html(result);
