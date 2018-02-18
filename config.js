@@ -7,3 +7,5 @@ exports.TESTDATABASE_URL =
   process.env.TestDatabase_URL || "mongodb://localhost/test-cards-db";
 
 exports.PORT = process.env.PORT || 8080;
+
+exports.SECRET_KEY = process.env.SECRET_KEY;

@@ -1,9 +1,10 @@
+require("dotenv").config();
 const bodyParser = require("body-parser");
 const express = require("express");
 const path = require("path");
 
 const app = express();
-const { PORT, DATABASE_URL } = require("./config.js");
+const { PORT, DATABASE_URL, SECRET_KEY } = require("./config.js");
 
 const router = express.Router();
 const mongoose = require("mongoose");
@@ -21,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(
   require("express-session")({
-    secret: "keyboard cat",
+    secret: SECRET_KEY,
     resave: false,
     saveUninitialized: false
   })
@@ -150,11 +151,9 @@ app.post("/users", (req, res) => {
       if (err.name === "AuthenticationError") {
         return res.status(422).json({ message: err.message });
       }
-      res
-        .status(500)
-        .json({
-          message: "Username or Password didn't work, please try again"
-        });
+      res.status(500).json({
+        message: "Username or Password didn't work, please try again"
+      });
     });
 });
 
