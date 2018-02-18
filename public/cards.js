@@ -1,5 +1,4 @@
 let used = [];
-let cards_js = [firstCard];
 
 let firstCard = {
   question: "Math.random()",
@@ -8,6 +7,7 @@ let firstCard = {
   reference:
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random"
 };
+let cards_js = [firstCard];
 
 function showMessage(message) {
   let result = `<h3>${message}</h3>`;
