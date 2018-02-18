@@ -1,7 +1,7 @@
 let used = [];
-let cards_js = [];
+let cards_js = [firstCard];
 
-let currentCard = {
+let firstCard = {
   question: "Math.random()",
   answer:
     "returns a floating-point, pseudo-random number in the range [0, 1) that is, from 0 (inclusive) up to but not including 1 (exclusive)",
