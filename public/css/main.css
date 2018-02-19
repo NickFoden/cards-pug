@@ -2,6 +2,17 @@
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
 }
+h2 {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-start: 0;
+  justify-self: center;
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
 
 :root {
   --white: #ffffff;
@@ -35,9 +46,6 @@ footer {
 
 #cards-title-nav {
   font-size: 25px;
-}
-h2 {
-  text-decoration: none;
 }
 
 h5 {
@@ -145,6 +153,8 @@ h5 {
   background-color: var(--white);
   color: var(--black);
   border-radius: 5px;
+  display: grid;
+  grid-template-rows: 1fr;
 }
 
 .display-card-answer {
