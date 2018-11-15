@@ -2,7 +2,7 @@
 
 [CARDS](https://cards-js.herokuapp.com/) Is a full stack javascript application that assists users in improving their knowledge of Javascript Methods. I wanted to build this to expand my knowledge of methods, and is a flashcards type app for javascript methods. You can log in and add more methods. After starting to work on this, decided to add the Pug Template engine to handle the views. Writing html in [Pug](https://pugjs.org/language/attributes.html) is fun and more succint.
 
-This node app project is supported by a mongo db at [mLab](https://mlab.com/) and the code is deployed on [HEROKU](https://thawing-retreat-12983.herokuapp.com/). PassportJS handle user authentication and if they are succesfully logged in then users have option to add more cards.
+This node app project is supported by a mongo db at [mLab](https://mlab.com/) and the code is deployed on [HEROKU](https://cards-js.herokuapp.com/). PassportJS handle user authentication and if they are succesfully logged in then users have option to add more cards.
 
 ## Demo Account
 
